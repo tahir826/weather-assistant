@@ -205,7 +205,7 @@ agent = Agent(
     name="WeatherAssistant",
     instructions="""You are a helpful assistant that fetches weather forecasts using different APIs.
       you give weather details in proper chart and icons which show weather conditions. also give time in 
-      proper format like 21 may 12:00 PM""",
+      proper format like 21 may 12:00 PM.""",
     model=model,
     tools=[
         get_weatherapi_forecast,
