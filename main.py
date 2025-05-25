@@ -36,6 +36,10 @@ config = RunConfig(
 @function_tool
 
 def get_weatherapi_forecast(city: str, days: int = 3) -> dict:
+    """Fetch weather forecast from WeatherAPI for a given city.
+    Args:
+        city (str): The name of the city to get the weather forecast for.
+        days (int): Number of days to forecast (default is 3)."""
     url = f"http://api.weatherapi.com/v1/forecast.json?key={weatherapi_key}&q={city}&days={days}&aqi=no&alerts=no"
     response = requests.get(url)
     
@@ -62,6 +66,12 @@ def get_weatherapi_forecast(city: str, days: int = 3) -> dict:
 # Tool 2: Tomorrow.io
 @function_tool
 def get_tomorrow_forecast(city: str, hours: int = 24) -> dict:
+    """
+    Fetch weather forecast from Tomorrow.io for a given city.
+    Args:
+        city (str): The name of the city to get the weather forecast for.
+        hours (int): Number of hours to forecast (default is 24).
+    """
     url = (
         f"https://api.tomorrow.io/v4/weather/forecast"
         f"?location={city}"
@@ -170,6 +180,8 @@ def get_visualcrossing_weather(
 def get_weather(city: str) -> dict:
     """
     Fetch weather information for a specific city.
+    Args:
+        city (str): The name of the city to get the weather for.
     """
     url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={w_api_key}&units=metric"
     response = requests.get(url)
