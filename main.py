@@ -200,7 +200,6 @@ def get_weather(city: str) -> dict:
         return {"error": f"Failed to get weather data: {response.status_code}"}
 
 
-
 agent = Agent(
     name="WeatherAssistant",
     instructions="""You are a helpful assistant that fetches weather forecasts using different APIs.
